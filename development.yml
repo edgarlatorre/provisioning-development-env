@@ -1,0 +1,13 @@
+- hosts: all
+  user: vagrant
+  become: true
+  vars:
+    ruby: ruby-2.1.2
+    postgresql: postgresql-9.5
+  tasks:
+    - include: tasks/main.yml
+    - include: tasks/database.yml
+    - include: tasks/server.yml
+    - include: tasks/python.yml
+    - include: tasks/shell.yml
+    - include: tasks/java.yml

@@ -1,0 +1,21 @@
+# MAIN DEPENDENCIES
+- name: apt-get update
+  command: apt-get update
+
+- name: add build-essential
+  action: apt name=build-essential
+
+- name: add git-core
+  action: apt name=git-core
+
+- name: add zlib1g-dev
+  action: apt name=zlib1g-dev
+
+- name: add openssl
+  action: apt name=openssl
+
+- name: add libssl-dev
+  action: apt name=libssl-dev
+
+- name: add python-psycopg2
+  action: apt name=python-psycopg2

@@ -1,0 +1,19 @@
+# PIP
+- name: Install pip
+  action: apt name=python-pip
+
+# VIRTUALENV
+- name: Install virtualenv
+  command: pip install virtualenv
+
+- name: Install virtualenvwrapper
+  command: pip install virtualenvwrapper
+
+# PYTHON 3
+- name: Install Python 3
+  action: apt name=python3
+- name: Install python3-dev
+  action: apt name=python3-dev
+
+#- name: Install Python 3 dev
+#  action: python3-dev

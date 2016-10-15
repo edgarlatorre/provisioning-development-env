@@ -1,0 +1,18 @@
+- name: copy up .bashrc
+  become: false
+  copy: dest=~/.bashrc src=files/bashrc
+
+- name: Create env directory
+  command: mkdir -p ~/.envs
+
+  #- name: Install heroku toolbelt
+  #  command: wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+- name: Set locale en_US.UTF-8
+  command: locale-gen "en_US.UTF-8"
+
+  # - name: locales
+  #   command: dpkg-reconfigure locales
+
+- name: Update locale
+  command: update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
