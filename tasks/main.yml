@@ -1,6 +1,6 @@
 # MAIN DEPENDENCIES
 - name: apt-get update
-  command: apt-get update
+  apt: update_cache=yes
 
 - name: add build-essential
   action: apt name=build-essential

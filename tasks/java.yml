@@ -4,10 +4,10 @@
   action: apt name=default-jdk
 
 - name: Download lein
-  command: wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -O /usr/local/bin/lein
-
-- name: Add permission for lein
-  command: chmod a+x /usr/local/bin/lein
+  get_url:
+    url: https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+    dest: /usr/local/bin/lein
+    mode: a+x
 
 - name: Install lein
   command: /usr/local/bin/lein
