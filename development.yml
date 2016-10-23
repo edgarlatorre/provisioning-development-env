@@ -12,3 +12,4 @@
     - include: tasks/shell.yml
     - include: tasks/java.yml
     - include: tasks/elixir.yml
+    - include: tasks/nodejs.yml
