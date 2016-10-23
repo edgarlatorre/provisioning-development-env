@@ -11,3 +11,4 @@
     - include: tasks/python.yml
     - include: tasks/shell.yml
     - include: tasks/java.yml
+    - include: tasks/elixir.yml
