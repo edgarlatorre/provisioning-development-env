@@ -1,0 +1,17 @@
+- name: Download go package
+  get_url:
+    url: https://dl.google.com/go/go1.10.linux-amd64.tar.gz
+    dest: /tmp
+
+- name: Extract go package into /usr/local/go
+  command: tar -C /usr/local -xzf /tmp/go1.10.linux-amd64.tar.gz
+
+- file:
+    path: /Projects/go/src
+    state: directory
+    mode: 0777
+
+- file:
+    path: /Projects/go/bin
+    state: directory
+    mode: 0777

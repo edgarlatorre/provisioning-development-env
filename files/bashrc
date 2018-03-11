@@ -143,3 +143,5 @@ PS1="$GREEN\u@$HOSTNAME$NO_COLOUR:\w${venv}$YELLOW\$(parse_git_branch)$NO_COLOUR
 
 #DJANGO SETTINGS VARIABLES
 export SECRET_KEY="i)md)l@q=t=!s(7d(9@mc7w7ln+39-o6qxopoyotzat2@((79a"
+
+export GOPATH=/Projects/go

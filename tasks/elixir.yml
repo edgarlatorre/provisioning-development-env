@@ -2,11 +2,14 @@
 
 - name: Download erlang db package
   get_url:
-    url: https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb 
+    url: https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
     dest: /tmp
 
 - name: Add erlang package
   command: dpkg -i /tmp/erlang-solutions_1.0_all.deb
+
+- name: Update apt-get
+  apt: update_cache=yes
 
 - name: Install erlang
   apt: name=esl-erlang

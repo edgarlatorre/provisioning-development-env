@@ -19,3 +19,6 @@
 
 - name: add python-psycopg2
   action: apt name=python-psycopg2
+
+- name: add unzip
+  action: apt name=unzip

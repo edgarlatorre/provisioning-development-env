@@ -1,15 +1,20 @@
 - hosts: all
   user: vagrant
   become: true
+  gather_facts: false
   vars:
     ruby: ruby-2.1.2
     postgresql: postgresql-9.5
   tasks:
-    - include: tasks/main.yml
-    - include: tasks/database.yml
-    - include: tasks/server.yml
-    - include: tasks/python.yml
-    - include: tasks/shell.yml
-    - include: tasks/java.yml
-    - include: tasks/elixir.yml
-    - include: tasks/nodejs.yml
+    - name: install python2
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+    - include_tasks: tasks/main.yml
+    - include_tasks: tasks/database.yml
+    - include_tasks: tasks/server.yml
+    - include_tasks: tasks/python.yml
+    - include_tasks: tasks/shell.yml
+    - include_tasks: tasks/java.yml
+    - include_tasks: tasks/elixir.yml
+    - include_tasks: tasks/js.yml
+    - include_tasks: tasks/vim.yml
+    - include_tasks: tasks/go.yml

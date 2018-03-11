@@ -24,3 +24,7 @@
 
 - name: Install libsqlite3-dev
   action: apt name=libsqlite3-dev
+
+# REDIS
+- name: Install REDIS
+  action: apt name=redis-server

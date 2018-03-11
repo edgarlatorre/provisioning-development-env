@@ -1,0 +1,18 @@
+# NODEJS
+
+- name: Download node package
+  get_url:
+    url: https://deb.nodesource.com/setup_8.x
+    dest: /tmp
+
+- name: Add node package
+  command: sh /tmp/setup_8.x
+
+- name: Install Node
+  apt: name=nodejs
+
+
+# VUEJS
+
+- name: Install Vuejs
+  command: npm install --global vue-cli

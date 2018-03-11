@@ -1,0 +1,124 @@
+filetype off                  " required
+
+set nu
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set textwidth=79
+set expandtab
+set autoindent
+set fileformat=unix
+set noerrorbells
+set encoding=utf-8
+set laststatus=2
+set vb t_vb=
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+set nobackup
+set nowritebackup
+set swapfile
+set dir=/tmp
+
+call plug#begin('~/.vim/plugged')
+
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+Plug 'scrooloose/syntastic'
+Plug 'kien/ctrlp.vim'
+Plug 'jnurmine/Zenburn'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'craigemery/vim-autotag'
+Plug 'elixir-lang/vim-elixir'
+Plug 'sheerun/vim-polyglot'
+Plug 'mhartington/oceanic-next'
+Plug 'nvie/vim-flake8'
+Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go'
+
+" All of your Plugins must be added before the following line
+call plug#end()
+
+filetype plugin indent on    " required
+
+syntax enable
+
+set splitbelow
+set splitright
+
+let mapleader=","
+
+"split navigations
+
+nnoremap <C-J> <C-W><C-J> " Move to the split below
+nnoremap <C-K> <C-W><C-K> " Move to the split above
+nnoremap <C-L> <C-W><C-L> " Move to the split to the right
+nnoremap <C-H> <C-W><C-H> " Move to the split to the left
+
+" Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
+" Clean hlsearch
+noremap <silent><esc> <esc>:noh<CR><esc>
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" Tabs
+nnoremap <leader>b :tabprevious<CR>
+nnoremap <leader>n   :tabnext<CR>
+nnoremap <leader>t     :tabnew<CR>
+
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+nnoremap <leader>0 10gt
+
+autocmd Filetype python setlocal ts=4 sw=4 sts=4 expandtab autoindent
+autocmd Filetype html setlocal ts=2 sw=2 sts=0 expandtab autoindent
+autocmd Filetype css setlocal ts=2 sw=2 sts=0 expandtab autoindent
+
+" airline
+" let g:airline_theme="powerlineish"
+let g:airline_theme='oceanicnext'
+let g:airline#extensions#branch#use_vcscommand = 1
+let g:airline#extensions#branch#empty_message  =  "NO VCS"
+let g:airline#extensions#whitespace#enabled    =  0
+let g:airline#extensions#syntastic#enabled     =  1
+let g:airline_powerline_fonts = 1
+
+let g:ctrlp_working_path_mode = ''
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/.pyc,*/__pycache__/*,*/htmlcov/*,*/node_modules/*
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|htmlcov|node_modules)$',
+  \ 'file': '\v\.(exe|so|dll,pyc)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+"+++ NERDTree +++
+map <leader>k :NERDTreeToggle<enter>
+set grepprg=ag\ --nogroup\ --nocolor
+let NERDTreeIgnore=['\.vim$', '\~$', '^Godeps$', '^htmlcov', '\.pyc$', '^__pycache__$', '^node_modules']
+" colorscheme OceanicNext
